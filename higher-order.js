@@ -87,9 +87,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest = monstersInYourPocket.filter(monster => monster["CP"]>200)
-
-
+let myStrongest = monstersInYourPocket.filter(monster => monster.CP>200)
 
 ////////// PROBLEM 5 //////////
 
@@ -103,10 +101,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 /*
   Use a higher order method to get the sum of all the order totals after adding in the sales tax
 */
-var newArr = []
-let ordersTotal = orders.map((order) => order.price + order.tax)
-ordersTotal = ordersTotal.reduce((a, b) => a + b);
-console.log(ordersTotal)
+let ordersTotal = orders.map((a) => a.price * (a.tax + 1));
 
 
 ////////// PROBLEM 6 //////////
@@ -125,7 +120,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal = purchases.filter((obj) => obj["owner"] === "Bob").map((element) => element.price).reduce((a, b) => a +b)
+let bobsTotal = purchases.filter((obj) => obj.owner === "Bob").map((element) => element.price).reduce((a, b) => a +b)
 
 // console.log(bobsTotal)
 
